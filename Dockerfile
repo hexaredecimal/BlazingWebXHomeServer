@@ -6,7 +6,6 @@ RUN pacman -Syu --noconfirm \
 
 # Clone the repository and set the working directory
 RUN cd / && \
-    git config --global user.name "Hexaredecimal" && \
     git clone https://github.com/hexaredecimal/JediGenZHomePage.git && \
     cd JediGenZHomePage
 
