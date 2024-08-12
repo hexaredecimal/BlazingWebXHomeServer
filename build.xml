@@ -10,6 +10,23 @@
 <project name="JediGenZHomeServer" default="default" basedir=".">
     <description>Builds, tests, and runs the project JediGenZHomeServer.</description>
     <import file="nbproject/build-impl.xml"/>
+
+		<target name="-post-jar">
+			<echo message="Building standalone jar file: ${dist.dir}/homeserver-dist.jar"/>
+			<jar destfile="${dist.dir}/homeserver-tmp-fat.jar" filesetmanifest="skip">
+				<zipgroupfileset dir="${dist.dir}"  includes="*.jar*"/>
+				<zipgroupfileset dir="${dist.dir}/lib"  includes="*.jar*"/>
+				<manifest>
+					<attribute name="Main-Class" value="BlazingWebx.Application" />
+				</manifest>
+			</jar>
+			<zip destfile="${dist.dir}/homeserver-dist.jar">
+				<zipfileset src="${dist.dir}/homeserver-tmp-fat.jar" 
+												excludes="META-INF/*.SF, META-INF/*.DSA, META-INF/*.RSA"/>
+			</zip>
+			<delete file="${dist.dir}/homeserver-tmp-fat.jar" />
+		</target>
+		
     <!--
 
     There exist several targets which are by default empty and which can be 

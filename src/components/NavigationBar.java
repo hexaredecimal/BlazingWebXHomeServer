@@ -1,17 +1,17 @@
 package components;
 
-import genz.A;
-import genz.Button;
-import genz.Div;
-import genz.GenZContainerElement;
-import genz.Li;
-import genz.Ul;
+import webx.A;
+import webx.Button;
+import webx.Div;
+import webx.WebXContainerElement;
+import webx.Li;
+import webx.Ul;
 
 /**
  *
  * @author hexaredecimal
  */
-public class NavigationBar extends GenZContainerElement {
+public class NavigationBar extends WebXContainerElement {
 	@Override
 	public String render() {
 		String[] navs = {"Download", "Examples", "Documentation", "About"}; 
@@ -30,7 +30,10 @@ public class NavigationBar extends GenZContainerElement {
 			ul
 				.addChild(
 					new Li()
-						.addChild(new A(nav))
+						.addChild(
+							new A(nav)
+								.href(String.format("%s/", nav.toLowerCase()))
+						)
 				);
 		}
 
@@ -41,7 +44,7 @@ public class NavigationBar extends GenZContainerElement {
 		var nav_center = new Div()
 			.className("navbar-center")
 			.addChildren(
-				new A("JediGenZ")
+				new A("BlazingWebX")
 					.href("/")
 					.className("btn btn-ghost text-xl")
 			);
@@ -51,7 +54,8 @@ public class NavigationBar extends GenZContainerElement {
 			.addChildren(
 				new Button()
 					.className("btn btn-ghost btn-circle")
-					.addChild(new GithubIcon())
+					.addChild(new GithubIcon()), 
+				new ThemeSwitcher()
 			);
 		
 		return new Div()

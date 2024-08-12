@@ -1,16 +1,16 @@
 package components;
 
-import genz.Aside;
-import genz.Footer;
-import genz.GenZContainerElement;
-import genz.P;
+import webx.Aside;
+import webx.Footer;
+import webx.WebXContainerElement;
+import webx.P;
 import java.util.Calendar;
 
 /**
  *
  * @author hexaredecimal
  */
-public class FooterComponent extends GenZContainerElement {
+public class FooterComponent extends WebXContainerElement {
 	
 	@Override
 	public String render() {
@@ -21,7 +21,7 @@ public class FooterComponent extends GenZContainerElement {
 			.addChild(
 				new Aside()
 					.addChild(
-						new P(String.format("Copyright %d © JediGenZ - Hexarevision - Built 100%% in JediGenZ", year))
+						new P(String.format("Copyright &copy; %d BlazingWebx - Hexarevision - Built 100%% in BlazingWebx", year))
 					)
 			)
 			.render();

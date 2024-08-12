@@ -1,6 +1,6 @@
-package jedigenzhomeserver;
+package BlazingWebx;
 
-import jedi.Jedi; 
+import blazing.Blazing; 
 
 /**
  *
@@ -12,6 +12,6 @@ public class Application {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-		Jedi.createServer(HomeServer.class);
+		Blazing.createServer(HomeServer.class);
 	}
 }

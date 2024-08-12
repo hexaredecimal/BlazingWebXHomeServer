@@ -1,15 +1,15 @@
 package components;
 
-import genz.Div;
-import genz.GenZContainerElement;
-import genz.Path;
-import genz.Svg;
+import webx.Div;
+import webx.WebXContainerElement;
+import webx.Path;
+import webx.Svg;
 
 /**
  *
  * @author hexaredecimal
  */
-public class NavIcon extends GenZContainerElement {
+public class NavIcon extends WebXContainerElement {
 	@Override
 	public String render() {
 		return new Div()

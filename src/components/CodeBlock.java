@@ -1,19 +1,21 @@
 package components;
 
-import genz.Div;
-import genz.GenZContainerElement;
-import genz.Pre;
+import webx.Div;
+import webx.WebXContainerElement;
+import webx.Pre;
 
 /**
  *
  * @author hexaredecimal
  */
-public class CodeBlock extends GenZContainerElement {
+public class CodeBlock extends WebXContainerElement {
 
 	private String text;
 
 	public CodeBlock(String text) {
-		this.text = text;
+		this.text = text
+			.replaceAll("<", "&lt;")
+			.replaceAll(">", "&gt;");
 	}
 
 	@Override
