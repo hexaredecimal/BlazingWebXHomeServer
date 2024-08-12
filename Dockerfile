@@ -6,16 +6,16 @@ RUN pacman -Syu --noconfirm \
 
 # Clone the repository and set the working directory
 RUN cd / && \
-    git clone https://github.com/hexaredecimal/clock.git && \
-    cd clock
+    git clone https://github.com/hexaredecimal/JediGenZHomePage.git && \
+    cd JediGenZHomePage
 
 # Set the working directory
-WORKDIR /clock
+WORKDIR /JediGenZHomePage 
 
 # Expose port 8080
 EXPOSE 8080
 
 # Run the Java application
-CMD ["java", "-jar", "clockserver-dist.jar", "."]
+CMD ["java", "-jar", "homeserver-dist.jar", "."]
 
 
