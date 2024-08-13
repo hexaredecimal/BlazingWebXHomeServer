@@ -6,6 +6,7 @@ import blazing.Initializer;
 import blazing.Post;
 import blazing.WebServer;
 import blazing.Route;
+import blazing.Static;
 import blazing.fs.FileSystem;
 import webx.Button;
 import webx.Div;
@@ -19,10 +20,12 @@ import components.*;
  *
  * @author hexaredecimal
  */
-@WebServer("6900")
+@WebServer
+@Static("/javadoc")
+@Static("/images")
 public class HomeServer {
 	
-	@Get
+	@Route
 	public static void home(BlazingResponse response) {
 
 		String intro
@@ -201,32 +204,5 @@ public class YourServer {
 
 		response.sendUiRespose(page);
 		
-	}
-		
-	@Get("/documentation")
-	public static void documentation(BlazingResponse response) {
-		var page = new Html()
-			.addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
-			.addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
-			.addHeaderScript("https://cdn.tailwindcss.com")
-			.title("BlazingWebx | Documentation")
-			.addChildren(
-				new NavigationBar(),
-				new Div()
-					.className("w-full h-20"),
-				new Div()
-					.addChildren(
-						new H3("BlazingWebx | 100% Java WebApps | Lets Go")
-							.className("p-5 text-center items-center")
-					),
-				new DownloadSectionMarker("Documentation"),
-				new Div()
-					.addChildren(
-						new P("Coming soon")
-							.className("text-center text-3xl")
-					)
-			);
-
-		response.sendUiRespose(page);
 	}
 }

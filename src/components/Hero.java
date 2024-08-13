@@ -19,7 +19,7 @@ public class Hero extends WebXContainerElement {
 					.className("hero min-h-screen")
 					.attr(
 						"style", 
-						"background-image: url(https://assets.entrepreneur.com/content/3x2/2000/1631038470-Ent-JavaProgramming.jpg?format=pjeg&auto=webp&crop=16:9&width=675&height=380);")
+						"background-image: url(images/bg.jpeg);")
 					.addChildren(
 						new Div()
 							.className("hero-overlay bg-opacity-60"),

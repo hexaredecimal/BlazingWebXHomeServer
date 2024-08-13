@@ -27,12 +27,17 @@ public class NavigationBar extends WebXContainerElement {
 			.addChild(ul);
 		
 		for (String nav: navs) {
+			String url = String.format("%s/", nav.toLowerCase());
+			if (nav.equals("Documentation")) {
+				url = "/javadoc/index.html";
+			}
+			
 			ul
 				.addChild(
 					new Li()
 						.addChild(
 							new A(nav)
-								.href(String.format("%s/", nav.toLowerCase()))
+								.href(url)
 						)
 				);
 		}
