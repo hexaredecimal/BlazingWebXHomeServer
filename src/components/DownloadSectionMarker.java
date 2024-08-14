@@ -25,7 +25,7 @@ public class DownloadSectionMarker extends WebXContainerElement {
 				new Div()
 					.attr(
 						"style", 
-						"background-image: url(https://assets.entrepreneur.com/content/3x2/2000/1631038470-Ent-JavaProgramming.jpg?format=pjeg&auto=webp&crop=16:9&width=675&height=380);")
+						"background-image: url(images/alternate.jpg);")
 					.addChildren(
 						new H3(this.label)
 					)

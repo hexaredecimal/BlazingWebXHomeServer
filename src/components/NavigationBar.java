@@ -6,6 +6,7 @@ import webx.Div;
 import webx.WebXContainerElement;
 import webx.Li;
 import webx.Ul;
+import webx.WebXElement;
 
 /**
  *
@@ -27,17 +28,27 @@ public class NavigationBar extends WebXContainerElement {
 			.addChild(ul);
 		
 		for (String nav: navs) {
-			String url = String.format("%s/", nav.toLowerCase());
+			String url = String.format("/%s", nav.toLowerCase());
+			WebXElement child = new Button(nav)
+				.hxGet(url)
+				.hxSwap("outerHTML")
+				.hxTarget("#main");
+
 			if (nav.equals("Documentation")) {
 				url = "/javadoc/index.html";
+				child = new A(nav)
+					.href(url);
+			} else if (nav.equals("About")) {
+				child = new Button(nav)
+					.attr("onclick", "about_modal.showModal();");
 			}
 			
+
 			ul
 				.addChild(
 					new Li()
 						.addChild(
-							new A(nav)
-								.href(url)
+							child
 						)
 				);
 		}

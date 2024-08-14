@@ -15,6 +15,8 @@ import webx.H2;
 import webx.H3;
 import webx.Html;
 import components.*;
+import webx.A;
+import webx.Main;
 
 /**
  *
@@ -24,7 +26,7 @@ import components.*;
 @Static("/javadoc")
 @Static("/images")
 public class HomeServer {
-	
+
 	@Route
 	public static void home(BlazingResponse response) {
 
@@ -63,26 +65,32 @@ public class YourServer {
 			.addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
 			.addHeaderScript("https://cdn.tailwindcss.com")
 			.title("BlazingWebx | Home")
+			.attr("data-theme", "dracula")
 			.addChild(new NavigationBar())
 			.addChildren(
-				new Hero(),
-				new Div()
-					.className("flex w-full p-5")
+				new AboutDialog(),
+				new Main()
+					.id("main")
 					.addChildren(
+						new Hero(),
 						new Div()
-							.className("card bg-base-300 flex-grow ")
-							.addChild(
-								new CodeBlock(code)
-							),
-						new Div()
-							.className("divider divider-horizontal"),
-						new Div()
-							.className("card bg-base-300 flex-grow p-10")
+							.className("flex w-full p-5 flex-col md:flex-row")
 							.addChildren(
-								new H2("Why another library?")
-									.className("text-3xl"),
-								new P(intro)
-									.className("py-6 text-xl")
+								new Div()
+									.className("card bg-base-300 flex-grow ")
+									.addChild(
+										new CodeBlock(code)
+									),
+								new Div()
+									.className("divider md:divider-horizontal"),
+								new Div()
+									.className("card bg-base-300 flex-grow p-10")
+									.addChildren(
+										new H2("Why another library?")
+											.className("text-3xl"),
+										new P(intro)
+											.className("py-6 text-xl")
+									)
 							)
 					),
 				new FooterComponent()
@@ -112,11 +120,8 @@ public class YourServer {
     </target>
 """;
 
-		var page = new Html()
-			.addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
-			.addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
-			.addHeaderScript("https://cdn.tailwindcss.com")
-			.title("BlazingWebx | Download")
+		var page = new Main()
+			.id("main")
 			.addChildren(
 				new NavigationBar(),
 				new Div()
@@ -126,7 +131,7 @@ public class YourServer {
 						new H3("BlazingWebx | 100% Java WebApps | Lets Go")
 							.className("p-5 text-center items-center")
 					),
-				new DownloadSectionMarker("Latest Version"),
+				new DownloadSectionMarker("Download"),
 				new Div()
 					.className("p-5")
 					.addChildren(
@@ -134,34 +139,22 @@ public class YourServer {
 							.attr("tabindex", "0")
 							.className("collapse collapse-plus border-base-300 bg-base-200 border")
 							.addChildren(
-								new P("Version 0.0.1")
+								new P("Latest")
 									.className("collapse-title text-xl font-medium"),
 								new Div()
 									.className("p-2 collapse-content")
-									.addChild(
-										new Button("Download")
+									.addChildren(
+										new P("Previous versions can be obtained from the release page on github. ")
+											.className("p-2"),
+										new P("Building from source is recommended for users who want to use the experimenat version. Note that the experimental features may be removed. ")
+											.className("p-2"),
+										new A("Download")
+											.href("https://github.com/hexaredecimal/BlazingWebX/releases")
 											.className("btn btn-neutral")
 									)
 							)
 					),
-				new DownloadSectionMarker("Previous versions"),
-				new Div()
-					.className("p-5")
-					.addChildren(
-						new Div()
-							.attr("tabindex", "0")
-							.className("collapse collapse-plus border-base-300 bg-base-200 border")
-							.addChildren(
-								new P("Version 0.0.1")
-									.className("collapse-title text-xl font-medium"),
-								new Div()
-									.className("p-2 collapse-content")
-									.addChild(
-										new Button("Download")
-											.className("btn btn-neutral")
-									)
-							)
-					),
+				new DownloadSectionMarker("Note"),
 				new Div()
 					.addChildren(
 						new H3("Note: By default BlazingWebx uses Ant as the build system and assumes you also do. If you are following then"
@@ -171,8 +164,7 @@ public class YourServer {
 						new H3("This will allow you to build fat jar files for your applications. This makes application deployment simple.")
 							.className("p-5")
 					)
-					.className("p-5 border-base-300 bg-base-200 border"),
-				new FooterComponent()
+					.className("p-5 border-base-300 bg-base-200 border")
 			);
 
 		response.sendUiRespose(page);
@@ -180,11 +172,8 @@ public class YourServer {
 
 	@Get("/examples")
 	public static void example(BlazingResponse response) {
-		var page = new Html()
-			.addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
-			.addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
-			.addHeaderScript("https://cdn.tailwindcss.com")
-			.title("BlazingWebx | Examples")
+		var page = new Main()
+			.id("main")
 			.addChildren(
 				new NavigationBar(),
 				new Div()
@@ -203,6 +192,6 @@ public class YourServer {
 			);
 
 		response.sendUiRespose(page);
-		
+
 	}
 }
