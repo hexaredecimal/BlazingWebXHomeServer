@@ -150,7 +150,13 @@ public class YourServer {
 											.className("p-2"),
 										new A("Download")
 											.href("https://github.com/hexaredecimal/BlazingWebX/releases")
-											.className("btn btn-neutral")
+											.className("btn btn-neutral"),
+										new P("Or click ")
+											.addChild(
+												new A("here")
+													.href("https://github.com/hexaredecimal/BlazingWebX/releases")
+											)
+											.className("p-5 text-light")
 									)
 							)
 					),
