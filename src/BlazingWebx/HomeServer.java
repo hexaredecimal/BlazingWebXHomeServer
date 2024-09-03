@@ -64,6 +64,7 @@ public class YourServer {
 			.addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
 			.addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
 			.addHeaderScript("https://cdn.tailwindcss.com")
+			.favicon("/images/bg.jpg")
 			.title("BlazingWebx | Home")
 			.attr("data-theme", "dracula")
 			.addChild(new NavigationBar())
