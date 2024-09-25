@@ -65,14 +65,37 @@ public class YourServer {
 """;
 
     var page = new Html()
+			.addHeaderChildren(
+				new Meta()
+					.attr("property", "og:type")
+					.attr("content", "website"),
+				new Meta()
+					.attr("property", "og:title")
+					.attr("content", "BlazingWebx"),
+				new Meta()
+					.attr("property", "og:description")
+					.attr("content", "A Java library for simplifying the creation of web applications"),
+				new Meta()
+					.attr("property", "og:image")
+					.attr("content", "/images/new.jpg"),
+				new Meta()
+					.attr("property", "og:url")
+					.attr("content", "https://blazingwebx.onrender.com/"),
+				new Meta()
+					.attr("name", "description")
+					.attr("content", "A java library for simplifying the creationg of Web applications"),
+				new Meta()
+					.attr("name", "keywords")
+					.attr("content", "Java, WebApp, WebApplication, SPA, HTMX, Blazing"),
+				new Meta()
+					.attr("name", "author")
+					.attr("content", "Gama Sibusiso"),
+				new Meta()
+					.attr("charset", "UTF-8")
+			)
       .addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
       .addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
       .addHeaderScript("https://cdn.tailwindcss.com")
-			.addHeaderChild(
-				new Meta()
-					.attr("property", "og:type")
-					.attr("contents", "website")
-			)
       .favicon("/images/newtiny.jpg")
       .title("BlazingWebx - Simplifying Java Web Application Development")
       .attr("data-theme", "dracula")
