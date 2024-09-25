@@ -91,6 +91,9 @@ public class YourServer {
 					.attr("name", "author")
 					.attr("content", "Gama Sibusiso"),
 				new Meta()
+					.attr("name", "google-site-verification")
+					.attr("content", "RQmqdAqRXyPIRC9LAesjQHUwBTY5NIv-rxtY2Z29BLU"),
+				new Meta()
 					.attr("charset", "UTF-8")
 			)
       .addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
