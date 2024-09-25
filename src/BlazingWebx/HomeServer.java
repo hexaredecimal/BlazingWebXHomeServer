@@ -18,7 +18,9 @@ import components.*;
 import examples.clockserver.ClockCode;
 import webx.A;
 import webx.H1;
+import webx.Input;
 import webx.Main;
+import webx.Meta;
 
 /**
  *
@@ -66,8 +68,13 @@ public class YourServer {
       .addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css")
       .addHeaderStyleLink("https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css")
       .addHeaderScript("https://cdn.tailwindcss.com")
+			.addHeaderChild(
+				new Meta()
+					.attr("property", "og:type")
+					.attr("contents", "website")
+			)
       .favicon("/images/newtiny.jpg")
-      .title("BlazingWebx | Home")
+      .title("BlazingWebx - Simplifying Java Web Application Development")
       .attr("data-theme", "dracula")
       .addChild(new NavigationBar())
       .addChildren(
@@ -142,6 +149,8 @@ public class YourServer {
               .attr("tabindex", "0")
               .className("collapse collapse-plus border-base-300 bg-base-200 border")
               .addChildren(
+								new Input()
+									.attr("type", "checkbox"),
                 new P("Latest")
                   .className("collapse-title text-xl font-medium"),
                 new Div()
@@ -158,6 +167,7 @@ public class YourServer {
                       .addChild(
                         new A("here")
                           .href("https://github.com/hexaredecimal/BlazingWebX/releases")
+													.className("text-blue-500")
                       )
                       .className("p-5 text-light")
                   )

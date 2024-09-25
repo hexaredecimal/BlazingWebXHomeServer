@@ -32,17 +32,18 @@ public class NavigationBar extends WebXContainerElement {
 			WebXElement child = new Button(nav)
 				.hxGet(url)
 				.hxSwap("outerHTML")
-				.hxTarget("#main");
+				.hxTarget("#main")
+				.attr("title", url);
 
 			if (nav.equals("Documentation")) {
 				url = "/javadoc/index.html";
 				child = new A(nav)
-					.href(url);
+					.href(url)
+					.attr("title", "Documentation");
 			} else if (nav.equals("About")) {
 				child = new Button(nav)
 					.attr("onclick", "about_modal.showModal();");
 			}
-			
 
 			ul
 				.addChild(

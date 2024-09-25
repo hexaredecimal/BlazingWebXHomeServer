@@ -31,7 +31,7 @@ public class Hero extends WebXContainerElement {
 							.addChildren(
 								new H1("BlazingWebx")
 									.className("mb-5 text-5xl font-bold"),
-								new P("Create your next web application 100% in Java! Build fast, ship fast")
+								new P("Pure Java, Pure Speed. Code with fire, deliver with lightning.")
 									.className("mb-5"),
 								new Button("Get Started")
 									.hxGet("/download")
