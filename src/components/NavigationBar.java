@@ -13,21 +13,22 @@ import webx.WebXElement;
  * @author hexaredecimal
  */
 public class NavigationBar extends WebXContainerElement {
+
 	@Override
 	public String render() {
-		String[] navs = {"Download", "Examples", "Documentation", "About"}; 
+		String[] navs = {"Download", "Examples", "Documentation", "About"};
 		var dropdown = new Div()
 			.className("dropdown");
 
 		var ul = new Ul()
 			.attr("tabindex", "0")
 			.className("menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow");
-		
+
 		dropdown
 			.addChild(new NavIcon())
 			.addChild(ul);
-		
-		for (String nav: navs) {
+
+		for (String nav : navs) {
 			String url = String.format("/%s", nav.toLowerCase());
 			WebXElement child = new Button(nav)
 				.hxGet(url)
@@ -71,14 +72,14 @@ public class NavigationBar extends WebXContainerElement {
 			.addChildren(
 				new Button()
 					.className("btn btn-ghost btn-circle")
-					.addChild(new GithubIcon()), 
+					.addChild(new GithubIcon()),
 				new ThemeSwitcher()
 			);
-		
+
 		return new Div()
 			.className("fixed navbar bg-base-100 z-10")
 			.addChildren(
-				nav_start, 
+				nav_start,
 				nav_center,
 				nav_end
 			)

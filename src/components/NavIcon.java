@@ -10,6 +10,7 @@ import webx.Svg;
  * @author hexaredecimal
  */
 public class NavIcon extends WebXContainerElement {
+
 	@Override
 	public String render() {
 		return new Div()

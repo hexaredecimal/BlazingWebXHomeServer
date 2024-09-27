@@ -5,18 +5,17 @@ package examples.clockserver;
  * @author ERC
  */
 public class ClockCode {
-  public static String mainMethodBody() {
-    return 
-      """
+
+	public static String mainMethodBody() {
+		return """
 public static void main(String[] args) {
   Blazing.createServer(ClockServer.class); // Use your class name if you did not name it as in the example      
 }
-      """; 
-  }
-  
-  public static String serverClassCode() {
-    return 
-      """
+      """;
+	}
+
+	public static String serverClassCode() {
+		return """
 @WebServer("6900")
 class ClockServer {
   @Get("/")
@@ -27,11 +26,10 @@ class ClockServer {
   }      
 }
       """;
-  }
-  
-  public static String serverClockUsage() {    
-    return 
-      """
+	}
+
+	public static String serverClockUsage() {
+		return """
 @WebServer
 class ClockServer {
   @Get("/")
@@ -42,11 +40,10 @@ class ClockServer {
   }      
 }
       """;
-  }
+	}
 
-  public static String serverClockResponses() {
-    return 
-      """
+	public static String serverClockResponses() {
+		return """
 @WebServer
 class ClockServer {
   @Get("/")
@@ -63,11 +60,10 @@ class ClockServer {
   } 
 }     
       """;
-  }
-  
-  public static String serverClockComponent() {
-    return 
-      """
+	}
+
+	public static String serverClockComponent() {
+		return """
 package components;
 
 import webx.Br;
@@ -122,6 +118,6 @@ public class ClockComponent extends WebXElement {
 	}
 }
       """;
-  }  
-  
+	}
+
 }

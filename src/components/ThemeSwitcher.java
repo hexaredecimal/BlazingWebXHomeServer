@@ -12,8 +12,6 @@ import webx.Svg;
  */
 public class ThemeSwitcher extends WebXElement {
 
-
-	
 	@Override
 	public String render() {
 		var sunIcon = new Svg()
@@ -27,17 +25,16 @@ public class ThemeSwitcher extends WebXElement {
 					)
 			);
 
-		return 
-			new Label()
-				.className("swap swap-rotate")
-				.addChildren(
-					new Input()
-						.attr("type", "checkbox")
-						.attr("value", "synthwave")
-						.className("theme-controller"), 
-					sunIcon, 
-					sunIcon
-				)
-				.render();
+		return new Label()
+			.className("swap swap-rotate")
+			.addChildren(
+				new Input()
+					.attr("type", "checkbox")
+					.attr("value", "synthwave")
+					.className("theme-controller"),
+				sunIcon,
+				sunIcon
+			)
+			.render();
 	}
 }

@@ -1,6 +1,6 @@
 package BlazingWebx;
 
-import blazing.Blazing; 
+import blazing.Blazing;
 
 /**
  *
