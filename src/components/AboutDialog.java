@@ -53,6 +53,7 @@ public class AboutDialog extends WebXContainerElement {
 								new A("BlazingWebx")
 									.href("https://github.com/hexaredecimal/BlazingWebX/")
 									.attr("title", "BlazingWebX")
+                  .className("text-blue-500")
 							)
 					),
 				new Form()
