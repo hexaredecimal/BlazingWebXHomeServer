@@ -1,4 +1,4 @@
-package example.fetch;
+package examples.fetch;
 
 /**
  *

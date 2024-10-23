@@ -15,7 +15,7 @@ import webx.H2;
 import webx.H3;
 import webx.Html;
 import components.*;
-import example.fetch.FetchAPICode;
+import examples.fetch.FetchAPICode;
 import examples.clockserver.ClockCode;
 import webx.A;
 import webx.Br;
