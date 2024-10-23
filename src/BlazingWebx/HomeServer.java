@@ -15,8 +15,10 @@ import webx.H2;
 import webx.H3;
 import webx.Html;
 import components.*;
+import example.fetch.FetchAPICode;
 import examples.clockserver.ClockCode;
 import webx.A;
+import webx.Br;
 import webx.H1;
 import webx.Input;
 import webx.Main;
@@ -225,9 +227,14 @@ public class YourServer {
 				new Div()
 					.id("examples")
 					.addChildren(
-						new A("Server Side Digital Clock")
-							.className("px-5 py-10 text-xl")
+						new P("Server Side Digital Clock")
+							.className("p-5 text-xl w-full border")
 							.hxGet("/clock-example")
+							.hxTarget("#examples")
+							.hxSwap("outerHTML"),
+						new P("Data fetching using JavaScript")
+							.className("p-5 text-xl w-full border")
+							.hxGet("/fetch-example")
 							.hxTarget("#examples")
 							.hxSwap("outerHTML")
 					)
@@ -297,6 +304,46 @@ public class YourServer {
 							.href("https://clock-sd1x.onrender.com")
 							.className("text-blue-500")
 					)
+					.className("p-5 text-lg")
+			);
+
+		response.sendUiRespose(page);
+	}
+
+	@Get("/fetch-example")
+	public static void fetch_example(BlazingResponse response) {
+		var page = new Div()
+			.id("examples")
+			.addChildren(
+				new P("Data fetching using BlazingWebX")
+					.className("p-10 text-2xl text-center border-b-white"),
+				new P("This is a an example of how to use BlazingWebX to send json responses to a client written in HTML and JavaScript.")
+					.className("p-5 text-lg"),
+				new P("The client will request a random number from the server and the server will generate it and respond with json")
+					.className("p-5 text-lg"),
+				new SectionMarker("Project Setup"),
+				new P("Create a new java project in your favourite IDE or Text Editor. This example is based on Netbeans")
+					.className("p-2"),
+				new P("NetBeans > New Project > Java with Ant")
+					.className("p-2"),
+				new P("Give your project any name and click on Finish")
+					.className("p-2"),
+				new SectionMarker("Implementation"),
+				new P("In the root of the project create your index.html file that will store the client side code and add the following code")
+					.className("p-2"),
+				new CodeBlock(FetchAPICode.html()),
+				new P("In the root of the project create a directory called <b>js</b> with a file named fetch.js and add the following code to it")
+					.className("p-2"),
+				new CodeBlock(FetchAPICode.js()),
+				new P("Then add a new class aside the one Netbeans created for you and name it APIServer or whatever name your like")
+					.className("p-2"),
+				new P("Open the class containing your main method and type the following inside the main method")
+					.className("p-2"),
+				new CodeBlock(FetchAPICode.entry()),
+				new P("Open the APIServer class and add the following code to it.")
+					.className("p-2"),
+				new CodeBlock(FetchAPICode.server()),
+				new P("Assumming there are no error, you can run the project and visit http://localhost:6900, you clock should be live")
 					.className("p-5 text-lg")
 			);
 
