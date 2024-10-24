@@ -1,3 +1,10 @@
 blazing
+blazing.crypto
 blazing.fs
+blazing.https
+blazing.https.query
+blazing.json
+blazing.lambda
+blazing.sql
+blazing.types
 webx

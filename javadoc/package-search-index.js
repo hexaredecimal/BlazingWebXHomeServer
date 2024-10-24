@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"blazing"},{"l":"blazing.fs"},{"l":"webx"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"blazing"},{"l":"blazing.crypto"},{"l":"blazing.fs"},{"l":"blazing.https"},{"l":"blazing.https.query"},{"l":"blazing.json"},{"l":"blazing.lambda"},{"l":"blazing.sql"},{"l":"blazing.types"},{"l":"webx"}];updateSearchResults();
