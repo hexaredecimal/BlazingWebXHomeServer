@@ -18,9 +18,9 @@ public class FooterComponent extends WebXContainerElement {
 
 		return new Footer()
 			.className("footer footer-center bg-base-300 text-base-content p-4")
-			.addChild(
+			.add(
 				new Aside()
-					.addChild(
+					.add(
 						new P(String.format("Copyright &copy; %d BlazingWebx - Hexarevision - Built 100%% in BlazingWebx", year))
 					)
 			)

@@ -58,7 +58,7 @@ public class YourServer {
 	public static void home(BlazingResponse respose) {
 		response.sendUiResponse(
 			new Html()
-				.addChild(
+				.add(
 					new H1("Hello, from BlazingWebx :)")
 				)
 		);
@@ -104,26 +104,26 @@ public class YourServer {
 			.favicon("/images/newtiny.jpg")
 			.title("BlazingWebx - Simplifying Java Web Application Development")
 			.attr("data-theme", "dracula")
-			.addChild(new NavigationBar())
-			.addChildren(
+			.add(new NavigationBar())
+			.add(
 				new AboutDialog(),
 				new Main()
 					.id("main")
-					.addChildren(
+					.add(
 						new Hero(),
 						new Div()
 							.className("flex w-full p-5 flex-col md:flex-row")
-							.addChildren(
+							.add(
 								new Div()
 									.className("card bg-base-300 flex-grow ")
-									.addChild(
+									.add(
 										new CodeBlock(code)
 									),
 								new Div()
 									.className("divider md:divider-horizontal"),
 								new Div()
 									.className("card bg-base-300 flex-grow p-10")
-									.addChildren(
+									.add(
 										new H2("Why another library?")
 											.className("text-3xl"),
 										new P(intro)
@@ -160,30 +160,30 @@ public class YourServer {
 
 		var page = new Main()
 			.id("main")
-			.addChildren(
+			.add(
 				new NavigationBar(),
 				new Div()
 					.className("w-full h-20"),
 				new Div()
-					.addChildren(
+					.add(
 						new H3("BlazingWebx | 100% Java WebApps | Lets Go")
 							.className("p-5 text-center items-center")
 					),
 				new DownloadSectionMarker("Download"),
 				new Div()
 					.className("p-5")
-					.addChildren(
+					.add(
 						new Div()
 							.attr("tabindex", "0")
 							.className("collapse collapse-plus border-base-300 bg-base-200 border")
-							.addChildren(
+							.add(
 								new Input()
 									.attr("type", "checkbox"),
 								new P("Latest")
 									.className("collapse-title text-xl font-medium"),
 								new Div()
 									.className("p-2 collapse-content")
-									.addChildren(
+									.add(
 										new P("Previous versions can be obtained from the release page on github. ")
 											.className("p-2"),
 										new P("Building from source is recommended for users who want to use the experimental version. Note that the experimental features may be removed or modified. ")
@@ -196,7 +196,7 @@ public class YourServer {
 					),
 				new DownloadSectionMarker("Note"),
 				new Div()
-					.addChildren(
+					.add(
 						new H3("Note: By default BlazingWebx uses Ant as the build system and assumes you also do. If you are following then"
 							+ " Add the following code to your build.xml file")
 							.className("p-5"),
@@ -214,19 +214,19 @@ public class YourServer {
 	public static void example(BlazingResponse response) {
 		var page = new Main()
 			.id("main")
-			.addChildren(
+			.add(
 				new NavigationBar(),
 				new Div()
 					.className("w-full h-20"),
 				new Div()
-					.addChildren(
+					.add(
 						new H3("BlazingWebx | 100% Java WebApps | Lets Go")
 							.className("p-5 text-center items-center")
 					),
 				new DownloadSectionMarker("Examples"),
 				new Div()
 					.id("examples")
-					.addChildren(
+					.add(
 						new P("Server Side Digital Clock")
 							.className("p-5 text-xl w-full border")
 							.hxGet("/clock-example")
@@ -248,7 +248,7 @@ public class YourServer {
 
 		var page = new Div()
 			.id("examples")
-			.addChildren(
+			.add(
 				new P("Server Side Digital Clock Using BlazingWebX")
 					.className("p-10 text-2xl text-center border-b-white"),
 				new P("This is a an example of how to use BlazingWebX to create a simple server side clock application 100% in java")
@@ -299,7 +299,7 @@ public class YourServer {
 					.className("p-5 text-lg"),
 				new SectionMarker("Deployment"),
 				new P("The clock server example is available for live preview at: ")
-					.addChild(
+					.add(
 						new A("https://clock-sd1x.onrender.com")
 							.href("https://clock-sd1x.onrender.com")
 							.className("text-blue-500")
@@ -314,7 +314,7 @@ public class YourServer {
 	public static void fetch_example(BlazingResponse response) {
 		var page = new Div()
 			.id("examples")
-			.addChildren(
+			.add(
 				new P("Data fetching using BlazingWebX")
 					.className("p-10 text-2xl text-center border-b-white"),
 				new P("This is a an example of how to use BlazingWebX to send json responses to a client written in HTML and JavaScript.")

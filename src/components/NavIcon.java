@@ -17,14 +17,14 @@ public class NavIcon extends WebXContainerElement {
 			.attr("tabindex", "0")
 			.attr("role", "button")
 			.className("btn btn-ghost btn-circle")
-			.addChild(
+			.add(
 				new Svg()
 					.attr("xmlns", "http://www.w3.org/2000/svg")
 					.attr("fill", "none")
 					.attr("viewBox", "0 0 24 24")
 					.attr("stroke", "currentColor")
 					.className("h-5 w-5")
-					.addChild(
+					.add(
 						new Path()
 							.attr("stroke-linecap", "round")
 							.attr("stroke-linejoin", "round")

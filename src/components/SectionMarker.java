@@ -22,7 +22,7 @@ public class SectionMarker extends WebXContainerElement {
 			.attr(
 				"style",
 				"background-image: url(images/newtiny.jpg);")
-			.addChildren(
+			.add(
 				new H3(this.label)
 			)
 			.className("p-5 w-full h-30")

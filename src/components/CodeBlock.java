@@ -27,7 +27,7 @@ public class CodeBlock extends WebXContainerElement {
 		for (int i = 0; i < lines.length; i++) {
 			String line = lines[i];
 			block
-				.addChild(
+				.add(
 					new Pre(line)
 						.attr("data-prefix", String.valueOf(i + 1))
 				);

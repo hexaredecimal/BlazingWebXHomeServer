@@ -20,15 +20,15 @@ public class Hero extends WebXContainerElement {
 			.attr(
 				"style",
 				"background-image: url(images/new.jpg);")
-			.addChildren(
+			.add(
 				new Div()
 					.className("hero-overlay bg-opacity-60"),
 				new Div()
 					.className("hero-content text-neutral-content text-center")
-					.addChild(
+					.add(
 						new Div()
 							.className("max-w-md")
-							.addChildren(
+							.add(
 								new H1("BlazingWebx")
 									.className("mb-5 text-5xl font-bold"),
 								new P("Pure Java, Pure Speed. Code with fire, deliver with lightning.")

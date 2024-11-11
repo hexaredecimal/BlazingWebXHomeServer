@@ -25,8 +25,8 @@ public class NavigationBar extends WebXContainerElement {
 			.className("menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow");
 
 		dropdown
-			.addChild(new NavIcon())
-			.addChild(ul);
+			.add(new NavIcon())
+			.add(ul);
 
 		for (String nav : navs) {
 			String url = String.format("/%s", nav.toLowerCase());
@@ -47,9 +47,9 @@ public class NavigationBar extends WebXContainerElement {
 			}
 
 			ul
-				.addChild(
+				.add(
 					new Li()
-						.addChild(
+						.add(
 							child
 						)
 				);
@@ -57,11 +57,11 @@ public class NavigationBar extends WebXContainerElement {
 
 		var nav_start = new Div()
 			.className("navbar-start")
-			.addChild(dropdown);
+			.add(dropdown);
 
 		var nav_center = new Div()
 			.className("navbar-center")
-			.addChildren(
+			.add(
 				new A("BlazingWebX")
 					.href("/")
 					.className("btn btn-ghost text-xl")
@@ -69,16 +69,16 @@ public class NavigationBar extends WebXContainerElement {
 
 		var nav_end = new Div()
 			.className("navbar-end")
-			.addChildren(
+			.add(
 				new Button()
 					.className("btn btn-ghost btn-circle")
-					.addChild(new GithubIcon()),
+					.add(new GithubIcon()),
 				new ThemeSwitcher()
 			);
 
 		return new Div()
 			.className("fixed navbar bg-base-100 z-10")
-			.addChildren(
+			.add(
 				nav_start,
 				nav_center,
 				nav_end

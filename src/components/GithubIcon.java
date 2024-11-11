@@ -15,7 +15,7 @@ public class GithubIcon extends WebXElement {
 		return new A()
 			.href("https://github.com/hexaredecimal/BlazingWebX")
 			.attr("title", "BlazingWebX")
-			.addChild(
+			.add(
 				new I()
 					.className("devicon-github-original-wordmark text-2xl")
 			)

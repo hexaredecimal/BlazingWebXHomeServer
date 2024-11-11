@@ -97,7 +97,7 @@ public class ClockComponent extends WebXElement {
 		}
 
 		return new Div()
-			.addChildren(
+			.add(
 				new P(_hour)
 					.hxTrigger("every 1s")
 					.hxGet("/hour"),

@@ -20,7 +20,7 @@ public class AboutDialog extends WebXContainerElement {
 
 		var close_btn = new Form()
 			.attr("method", "dialog")
-			.addChild(
+			.add(
 				new Button("X")
 					.className("btn btn-sm btn-circle btn-ghost absolute right-2 top-2")
 			);
@@ -28,10 +28,10 @@ public class AboutDialog extends WebXContainerElement {
 		return new Dialog()
 			.id("about_modal")
 			.className("modal")
-			.addChildren(
+			.add(
 				new Div()
 					.className("modal-box")
-					.addChildren(
+					.add(
 						close_btn,
 						new H3("About BlazingWebx")
 							.className("p-5 text-2xl text-bold"),
@@ -39,7 +39,7 @@ public class AboutDialog extends WebXContainerElement {
 							.className("p-5"),
 						new P("Created by: ")
 							.className("p-5")
-							.addChild(
+							.add(
 								new A("Gama Sibusiso")
 									.href("https://github.com/hexaredecimal")
 									.className("text-blue-500")
@@ -49,7 +49,7 @@ public class AboutDialog extends WebXContainerElement {
 							.className("p-5"),
 						new P("Repository: ")
 							.className("p-5")
-							.addChild(
+							.add(
 								new A("BlazingWebx")
 									.href("https://github.com/hexaredecimal/BlazingWebX/")
 									.className("text-blue-500")
@@ -59,7 +59,7 @@ public class AboutDialog extends WebXContainerElement {
 				new Form()
 					.attr("method", "dialog")
 					.className("modal-backdrop")
-					.addChild(
+					.add(
 						new Button("close")
 					)
 			)
